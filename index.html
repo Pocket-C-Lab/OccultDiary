@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OccultDiary</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="libs/simplebar/simplebar.css">
+	<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAEaSURBVFhH7ZZZDoMwDESTXoBfPuH+h2w7iBHGtZ2EskiIJ0VZvGTiACK/v6QLOUVAznkeLXBbU4AVQFr1IlcU8yOgGFCwS2p8N11Bi4gSr7lvYq/NwSYBe3K5gNO+A3huJNz28AqM45j6vp9nCxQUVkCrJrVF8+IlZgUQGAXXJMbJLaT4aYwKSLA+DMPUd1039Wy0y7mF9JFN28DqCqKTwc2yi/AVNVVC7OoKvGRAJ4Rv5F/LvT9EXoVk9ZoFtJZd+3POK3UFtG6kkfEYs2lMAXTUAd66BU7ovQlYZ45D/wc8ATLWrECteonlb/npNbcCNeol9PfsHuFDqJNFyWnzhHsUX0MKiTb/h9N+SDyKFTiaR8Aj4GIBKX0A5wEEOEAYN50AAAAASUVORK5CYII=" />
+	<script type="text/javascript" src="libs/simplebar/simplebar.js"></script>
+	<script type="text/javascript" src="libs/angular-1.8.2/angular.min.js"></script>
+	<script type="text/javascript" src="libs/angular-1.8.2/angular-route.js"></script>
+	<base href="/" />
+</head>
+<body ng-app="myApp">
+	<section>
+		<img id="profile" src="assets/images/profile.png" height="175px" alt="profile image"/>
+		<div id="menu" data-simplebar>
+			<a href="/"><button class="_button">My Story</button></a>
+			<a href="vampires"><button class="_button">Psi Vampirs</button></a>
+			<a href="goblins"><button class="_button">Psi Goblins</button></a>
+			<a href="magic"><button class="_button">Magic Systems</button></a>
+			<a href="orion"><button class="_button">Orion & Andromeda Cults</button></a>
+			<!-- <a href="#!test"><button class="_button">Test</button></a> -->
+			<a href="credits"><button class="_button">Credits</button></a>
+		</div>
+	</section>
+	<main data-simplebar>
+		​<div ng-view></div>
+	</main>
+
+	<script>
+	var app = angular.module("myApp", ["ngRoute"]);
+	app.config(function($routeProvider, $locationProvider) {
+	    $routeProvider
+		    .when("/", {
+		        templateUrl : "pages/my_story.htm"
+		    })
+		    .when("/vampires", {
+		        templateUrl : "pages/vampires.htm"
+		    })
+		    .when("/goblins", {
+		        templateUrl : "pages/goblins.htm"
+		    })
+		    .when("/magic", {
+		        templateUrl : "pages/magic.htm"
+		    })
+		    .when("/orion", {
+		        templateUrl : "pages/orion.htm"
+		    })
+		    .when("/test", {
+		        templateUrl : "pages/test2.htm"
+		    })
+		    .when("/credits", {
+		        templateUrl : "pages/credits.htm"
+	    });
+		$locationProvider.html5Mode(true);	    
+	});
+	</script>
+</body>
+</html>
