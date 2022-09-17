@@ -154,11 +154,12 @@ p {
 	font-size: 20px;
 	font-style: normal;
 }
-span {
-	font-family: Gamepixies;	
-}
-sub {
+span, sub, kbd {
 	font-family: Gamepixies;
+}
+kbd {
+	display: block;
+	margin-left: 2rem;
 }
 
 button {
