@@ -160,6 +160,8 @@ span, sub, kbd {
 kbd {
 	display: block;
 	margin-left: 2rem;
+	/* color: black; */
+	font-weight: bold;
 }
 
 button {
