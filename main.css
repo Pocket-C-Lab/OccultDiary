@@ -85,6 +85,14 @@ main {
 	justify-content: space-between;
 }
 
+/* Misc styles */
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 /*Mobile style classes*/
 #mobile_body {
 	display: flex;
